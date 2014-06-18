@@ -10,7 +10,7 @@ public class Creepy : MonoBehaviour
     NavMeshAgent agent;
     public bool seen = false;
     GameObject player;
-
+    public bool activated = true;
     Vector3 lastFramePosition;
 
     // Use this for initialization
@@ -28,35 +28,28 @@ public class Creepy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 currentFramePosition = transform.position;
-        float distance = Vector3.Distance(lastFramePosition, currentFramePosition);
+        if (activated)
+        {
+            Vector3 currentFramePosition = transform.position;
+            float distance = Vector3.Distance(lastFramePosition, currentFramePosition);
         
-        lastFramePosition = currentFramePosition;
-        float currentSpeed = Mathf.Abs(distance)/Time.deltaTime;
+            lastFramePosition = currentFramePosition;
+            float currentSpeed = Mathf.Abs(distance) / Time.deltaTime;
 
-        if(!seen)
-            Chase(player.transform.position);
+            if (!seen)
+                Chase(player.transform.position);
 
-        if (currentSpeed < 0.5f)
-        {
-            animator.SetBool("Run", false);
+            if (currentSpeed < 0.5f)
+            {
+                animator.SetBool("Run", false);
+            } else
+            {
+                animator.SetBool("Run", true);
+            }
         } else
-        {
-            animator.SetBool("Run", true);
-        }
-
-        /*if (agent.remainingDistance < 2f)
-        {
-            agent.Stop();
-        }*/
-
-        /*if (seen)
         {
             Freeze();
-        } else
-        {
-            Resume();
-        }*/
+        }
     }
 
     public void Chase(Vector3 t)
@@ -67,16 +60,25 @@ public class Creepy : MonoBehaviour
         animator.SetBool("Run", true);
     }
 
-    public void Freeze(){
-        agent.enabled = false;
-        animator.enabled = false;
-        seen = true;
+    public void Freeze()
+    {
+        if (!seen)
+        {
+            agent.enabled = false;
+            animator.enabled = false;
+            seen = true;
+        }
     }
 
-    public void Resume(){
-        agent.enabled = true;
-        agent.SetDestination(target);
-        animator.enabled = true;
-        seen = false;
+    public void Resume()
+    {
+        if (seen && activated)
+        {
+            agent.enabled = true;
+            if (activated)
+                agent.SetDestination(target);
+            animator.enabled = true;
+            seen = false;
+        }
     }
 }
