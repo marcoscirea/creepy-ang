@@ -6,6 +6,7 @@ public class Look : MonoBehaviour {
     ArrayList enemies = new ArrayList();
 
     float fieldOfViewRange= 60f;
+    public float fieldOfView = 50f;
 
 	// Use this for initialization
 	void Start () {
@@ -22,11 +23,11 @@ public class Look : MonoBehaviour {
             RaycastHit hit;
             Vector3 rayDirection = (g.transform.position - transform.position).normalized;
 
-            Debug.Log(Vector3.Angle(rayDirection, transform.forward));
+            //Debug.Log(Vector3.Angle(rayDirection, transform.forward));
             if((Vector3.Angle(rayDirection, transform.forward)) < fieldOfViewRange){ // Detect if player is within the field of view
-                if (Physics.Raycast (transform.position, rayDirection, out hit)) {
-                    Debug.DrawRay(transform.position,rayDirection);
-                    Debug.Log(hit.transform.name);
+                if (Physics.Raycast (transform.position, rayDirection, out hit, fieldOfView)) {
+                    //Debug.DrawRay(transform.position,rayDirection);
+                    //Debug.Log(hit.transform.name);
                     if (hit.transform.tag == "Creepy") {
                         //Debug.Log("Can see enemy");
                         g.GetComponent<Creepy>().Freeze();

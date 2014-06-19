@@ -12,17 +12,22 @@ public class Creepy : MonoBehaviour
     GameObject player;
     public bool activated = true;
     Vector3 lastFramePosition;
+    //AudioSource audio;
 
     // Use this for initialization
     void Start()
     {
         animator = GetComponent<Animator>();   
         agent = GetComponent<NavMeshAgent>();
+        //audio = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
 
         lastFramePosition = transform.position;
 
         animator.applyRootMotion = false;
+
+        if (enabled)
+            audio.Play();
     }
     
     // Update is called once per frame
@@ -64,8 +69,10 @@ public class Creepy : MonoBehaviour
     {
         if (!seen)
         {
-            agent.enabled = false;
+            //agent.enabled = false;
+            agent.Stop();
             animator.enabled = false;
+            audio.Pause();
             seen = true;
         }
     }
@@ -74,11 +81,19 @@ public class Creepy : MonoBehaviour
     {
         if (seen && activated)
         {
-            agent.enabled = true;
+            //agent.enabled = true;
             if (activated)
                 agent.SetDestination(target);
             animator.enabled = true;
+            audio.Play();
             seen = false;
+        }
+    }
+
+    void OnTriggerEnter(Collider collider){
+        if (activated && collider.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Dead");
         }
     }
 }
