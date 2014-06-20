@@ -70,7 +70,7 @@ public class Creepy : MonoBehaviour
         if (!seen)
         {
             //agent.enabled = false;
-            agent.Stop();
+            agent.Stop(true);
             animator.enabled = false;
             audio.Pause();
             seen = true;
