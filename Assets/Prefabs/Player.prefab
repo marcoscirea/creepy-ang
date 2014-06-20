@@ -92,8 +92,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_LocalRotation: {x: 0, y: -.455691576, z: 0, w: .890137792}
-  m_LocalPosition: {x: -18.8998604, y: -2.10676765, z: -5.38691378}
+  m_LocalRotation: {x: 0, y: -.700188696, z: 0, w: .713957906}
+  m_LocalPosition: {x: 3.92439961, y: 1.35637474, z: 35.3288498}
   m_LocalScale: {x: 1, y: 1.22174621, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -117,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.907083511, z: 0}
+  m_LocalPosition: {x: -8.77459399e-07, y: -.907083511, z: .462199122}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
@@ -203,7 +203,7 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 13.4136095
+  m_Range: 18
   m_SpotAngle: 54.1486282
   m_CookieSize: 10
   m_Shadows:
@@ -215,13 +215,13 @@ Light:
     m_SoftnessFade: 1
   m_Cookie: {fileID: 2800000, guid: 2c29c08dd1c0b6749b7cd0fcff7a29fd, type: 3}
   m_DrawHalo: 0
-  m_ActuallyLightmapped: 1
+  m_ActuallyLightmapped: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 1
+  m_Lightmapping: 0
   m_ShadowSamples: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8397131778dd95c4ba89a1abb062f6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fieldOfView: 50
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
