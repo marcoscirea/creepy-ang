@@ -1794,6 +1794,10 @@ Prefab:
       propertyPath: sensitivityY
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: ec1dfb7c4a8642c4f879481ee40676b9, type: 2}
+      propertyPath: m_Intensity
+      value: 1.20000005
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec1dfb7c4a8642c4f879481ee40676b9, type: 2}
   m_RootGameObject: {fileID: 961397918}
@@ -11289,7 +11293,7 @@ Light:
   serializedVersion: 3
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.20000005
   m_Range: 18
   m_SpotAngle: 54.1486282
   m_CookieSize: 10
@@ -19142,6 +19146,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1609933442}
+  - {fileID: 2029874466}
   - {fileID: 2096845259}
   m_Father: {fileID: 0}
 --- !u!114 &1663937381
@@ -23206,6 +23211,56 @@ Transform:
   m_Children:
   - {fileID: 2142708148}
   m_Father: {fileID: 2094141402}
+--- !u!1 &2029874465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2029874466}
+  - 132: {fileID: 2029874467}
+  m_Layer: 0
+  m_Name: Continue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2029874466
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2029874465}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.330000013, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1663937380}
+--- !u!132 &2029874467
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2029874465}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Text: Press any key to continue
+  m_Anchor: 4
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 12800000, guid: 996dcc0998ff74c4394f415a7c04ba66, type: 3}
+  m_Material: {fileID: 0}
+  m_FontSize: 34
+  m_FontStyle: 3
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278190262
+  m_PixelCorrect: 1
+  m_RichText: 1
 --- !u!1 &2031438652
 GameObject:
   m_ObjectHideFlags: 0
