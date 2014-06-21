@@ -89,11 +89,4 @@ public class Creepy : MonoBehaviour
             seen = false;
         }
     }
-
-    void OnTriggerEnter(Collider collider){
-        if (activated && collider.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Dead");
-        }
-    }
 }

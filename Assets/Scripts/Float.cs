@@ -10,12 +10,12 @@ public class Float : MonoBehaviour {
 	void Start () {
         startingPosition = transform.position;
         target = startingPosition + (Vector3.up * Random.Range(-0.2f, 0.2f));
-        Debug.Log(target);
+        //Debug.Log(target);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(Vector3.Distance(transform.position, target));
+        //Debug.Log(Vector3.Distance(transform.position, target));
         if (Vector3.Distance(transform.position, target) > 0.01f)
         {
             float speed = Vector3.Distance(transform.position, target);

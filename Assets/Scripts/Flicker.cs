@@ -2,20 +2,22 @@
 using System;
 using System.Collections;
 
-public class Flicker : MonoBehaviour
+public abstract class Flicker : MonoBehaviour
 {
     float startingTime = 0;
     bool isStarted = false;
     bool hasBlinked = false;
-    Vector3 startingPosition;
 
-    bool activated = false;
+    public float lenght = 2f;
+    public bool infinite = false;
+    public bool activated = false;
 
     void Awake(){
-        renderer.enabled = false;
-        startingPosition = transform.position;
+        doAwake();
     }
-    
+
+    public abstract void doAwake();
+
     void Update()
     {
         if (activated)
@@ -29,14 +31,16 @@ public class Flicker : MonoBehaviour
                     isStarted = true;
                 } else
                 {
-                    if ((Time.time - startingTime) >= 2) //Stop after 2 seconds
+                    if (!infinite && (Time.time - startingTime) >= lenght) //Stop after 2 seconds
                     {
                         this.hasBlinked = true;
-                        renderer.enabled = true;
+                        //renderer.enabled = true;
+                        On();
                     } else //Blink
                     {
-                        renderer.enabled = false;
-                        transform.position = startingPosition + (UnityEngine.Random.insideUnitSphere * 0.1F);
+                        //renderer.enabled = false;
+                        //transform.position = startingPosition + (UnityEngine.Random.insideUnitSphere * 0.1F);
+                        Off();
                         StartCoroutine(EnableRenderer());
                     }
                 }
@@ -47,19 +51,25 @@ public class Flicker : MonoBehaviour
     IEnumerator EnableRenderer() //Blink every time.
     {
         yield return new WaitForSeconds(UnityEngine.Random.Range(0.01f, 0.2f)); //Wait after each blink
-        this.renderer.enabled = true;
-        transform.position = startingPosition + (UnityEngine.Random.insideUnitSphere * 0.1F);
+        //this.renderer.enabled = true;
+        //transform.position = startingPosition + (UnityEngine.Random.insideUnitSphere * 0.1F);
+        On();
         yield return new WaitForSeconds(UnityEngine.Random.Range(0.01f, 0.2f)); //Wait after each blink
     }
 
-    void OnTriggerEnter(){
+    public abstract void Off();
+
+    public abstract void On();
+
+    public void Activate(){
         activated = true;
     }
-
-    void OnTriggerExit(){
+    
+    public void Reset(){
         activated = false;
         isStarted = false;
         hasBlinked = false;
-        renderer.enabled = false;
+        Off();
     }
+
 }

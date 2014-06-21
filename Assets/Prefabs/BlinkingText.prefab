@@ -80,9 +80,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee077d2e2e8d29a41b35f1ff67079743, type: 3}
+  m_Script: {fileID: 11500000, guid: 33cbb6b050dd1ed4a9a007f29c7b2e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lenght: 2
+  infinite: 0
+  activated: 0
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -93,7 +96,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 45
+  m_Radius: 47.0999985
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:

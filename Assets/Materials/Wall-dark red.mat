@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Wall-
+  m_Name: Wall-dark red
   m_Shader: {fileID: 4800000, guid: bace1b0401934cd4494a98634d5579fd, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
@@ -47,7 +47,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .798782885, g: .0882353187, b: 1, a: .525490224}
+        second: {r: .654411793, g: .259839982, b: .259839982, a: .525490224}
       data:
         first:
           name: _OutlineColor
