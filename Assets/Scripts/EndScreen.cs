@@ -16,12 +16,20 @@ public class EndScreen : MonoBehaviour {
 	
     public void Dead(){
         gameOver.enabled = true;
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Creepy"))
+        {
+            g.GetComponent<Creepy>().activated=false;
+        }
     }
 
     public void Safe(){
         escape.enabled = true;
-        Time.timeScale = 0.1f;
+        //Time.timeScale = 0f;
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Creepy"))
+        {
+            g.GetComponent<Creepy>().activated=false;
+        }
     }
 
     public void Continue(){

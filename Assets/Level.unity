@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 872509213}
-  damping: .100000001
+  damping: .699999988
   smooth: 1
   minDistance: 10
   property: 
@@ -2333,7 +2333,7 @@ Light:
     m_Softness: 4
     m_SoftnessFade: 1
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
+  m_DrawHalo: 1
   m_ActuallyLightmapped: 1
   m_Flare: {fileID: 12100000, guid: 54fbbf098d116effa00081aba8ad6659, type: 2}
   m_RenderMode: 0
@@ -2353,7 +2353,7 @@ Transform:
   m_PrefabInternal: {fileID: 838859307}
   m_GameObject: {fileID: 183977636}
   m_LocalRotation: {x: .107944161, y: 0, z: 0, w: .994157016}
-  m_LocalPosition: {x: 46.4486885, y: 2.12011909, z: -67.5248642}
+  m_LocalPosition: {x: 46.4486885, y: 3.6407578, z: -67.1907043}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9380,11 +9380,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2f626a45c8a6cf247be649885fad06a4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.12011909
+      value: 3.6407578
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2f626a45c8a6cf247be649885fad06a4, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -67.5248642
+      value: -67.1907043
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2f626a45c8a6cf247be649885fad06a4, type: 2}
       propertyPath: m_LocalRotation.x
@@ -9406,6 +9406,15 @@ Prefab:
       propertyPath: m_ActuallyLightmapped
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 2f626a45c8a6cf247be649885fad06a4, type: 2}
+      propertyPath: m_DrawHalo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 2f626a45c8a6cf247be649885fad06a4, type: 2}
+      propertyPath: m_Flare
+      value: 
+      objectReference: {fileID: 12100000, guid: 54fbbf098d116effa00081aba8ad6659,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f626a45c8a6cf247be649885fad06a4, type: 2}
   m_RootGameObject: {fileID: 183977636}
@@ -10585,6 +10594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b55cc3ca0e8bef74c9929136fd47ab72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ended: 0
 --- !u!54 &961397928
 Rigidbody:
   m_ObjectHideFlags: 0
